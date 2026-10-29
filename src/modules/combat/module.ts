@@ -78,7 +78,7 @@ export default defineModule({
       preconditions: [{ type: 'guildOnly' }],
       args: {
         action: arg.enum('Действие', ['attack', 'skill', 'ultimate', 'heal']).default('attack'),
-        target: arg.string('Цель'),
+        target: arg.string('Цель').optional(),
       },
       run: async ({ args, services }): Promise<Result> => {
         const combat = services.combat!;
