@@ -11,6 +11,10 @@ export default {
     logs: { enabled: true },
     recorder: { enabled: true },
     voice: { enabled: true },
+    gacha: { enabled: true },
+    minigames: { enabled: true },
+    weapons: { enabled: true },
+    combat: { enabled: true },
     // recorder: {
     //   enabled: true,
     //   options: {
@@ -20,11 +24,15 @@ export default {
     // },
   },
   services: {
+    gacha: { options: {} },
+    minigames: { options: {} },
+    weapons: { options: {} },
     shikimori: {
       options: {
         userAgent: process.env.SHIKIMORI_USER_AGENT ?? 'Brik (Discord bot; https://github.com/pyw0w/brik)',
       },
     },
+    combat: { options: {} },
   },
   owners: [],
 } satisfies BotConfig;

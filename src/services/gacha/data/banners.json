@@ -1,0 +1,70 @@
+[
+  {
+    "id": "banner_limited_wuwa_01",
+    "name": "Полумесячный прилив",
+    "description": "Повышенный шанс Jinhsi и эпиков события.",
+    "imageUrl": "https://wuwatracker.com/api/character-portraits/file/limited_jinhsi.webp",
+    "type": "limited",
+    "startsAt": "2026-01-01T00:00:00.000Z",
+    "endsAt": null,
+    "poolCharacterIds": [
+      "char_jinhsi",
+      "char_camellya",
+      "char_verina",
+      "char_calcharo",
+      "char_chixia",
+      "char_mortefi",
+      "char_baizhi",
+      "char_yangyang",
+      "char_changli",
+      "char_lingyang"
+    ],
+    "featuredCharacterIds": ["char_jinhsi"],
+    "rateTable": { "star4": 0.992, "star5": 0.008 },
+    "pityBannerType": "limited",
+    "acceptPullsAfterEnd": false
+  },
+  {
+    "id": "banner_standard",
+    "name": "Вечный резонанс",
+    "description": "Постоянный баннер со стандартным пулом.",
+    "imageUrl": "https://wuwatracker.com/api/character-portraits/file/verina.webp",
+    "type": "standard",
+    "startsAt": "2026-01-01T00:00:00.000Z",
+    "endsAt": null,
+    "poolCharacterIds": [
+      "char_verina",
+      "char_calcharo",
+      "char_chixia",
+      "char_mortefi",
+      "char_baizhi",
+      "char_yangyang",
+      "char_changli",
+      "char_lingyang"
+    ],
+    "featuredCharacterIds": [],
+    "rateTable": { "star4": 0.992, "star5": 0.008 },
+    "pityBannerType": "standard",
+    "acceptPullsAfterEnd": true
+  },
+  {
+    "id": "banner_event_01",
+    "name": "Событийный баннер",
+    "description": "Событийный баннер с настраиваемым пулом персонажей.",
+    "imageUrl": "https://wuwatracker.com/api/character-portraits/file/camellya.webp",
+    "type": "event",
+    "startsAt": "2026-01-01T00:00:00.000Z",
+    "endsAt": null,
+    "poolCharacterIds": [
+      "char_camellya",
+      "char_chixia",
+      "char_mortefi",
+      "char_yangyang",
+      "char_changli"
+    ],
+    "featuredCharacterIds": ["char_camellya"],
+    "rateTable": { "star4": 0.992, "star5": 0.008 },
+    "pityBannerType": "event",
+    "acceptPullsAfterEnd": false
+  }
+]

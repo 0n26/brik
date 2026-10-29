@@ -86,6 +86,46 @@
   - `trigger` — триггер-канал для входа (#канал или ID).
   - `name` — шаблон названия (например, `"🔊 {user}"` или `"Комната {user}"`).
 
+### `combat`
+
+Боевая система: пошаговые бои, навыки, эффекты и штрафы.
+
+- **`/combat`** — меню боевой системы.
+- **`/combat-start <player_count> <enemy_count>`** — начать бой.
+- **`/combat-action <action> <target>`** — выполнить действие.
+
+### `gacha`
+
+Гача-система по мотивам Wuthering Waves: баннеры, крутки, коллекция, задания и.shop.
+
+- **`/gacha`** — главное меню.
+- **`/banner`** — список баннеров.
+- **`/pull <banner> [1|10]`** — крутка.
+- **`/collection`** — коллекция персонажей.
+- **`/character <query>`** — информация о персонаже.
+- **`/pity [banner]`** — прогресс гарантий.
+- **`/history [page]`** — история круток.
+- **`/daily`** — ежедневная награда.
+- **`/weekly`** — еженедельная награда.
+- **`/quest [claim]`** — задания.
+- **`/shop [buy]`** — магазин.
+- **`/inventory`** — баланс ресурсов.
+- **`/leaderboard`** — топ-лист.
+
+### `minigames`
+
+Мини-игры без персонажей: сокровища, викторина, взлом ключей, рыбалка, добыча ресурсов, кости.
+
+- **`/minigames`** — меню игр.
+- **`/minigame <game>`** — игра.
+
+### `weapons`
+
+Инвентарь, экипировка и улучшение оружия.
+
+- **`/weapons`** — меню оружия.
+- **`/weapon <action>`** — действия оружия.
+
 ## Сервисы
 
 Сервисы — это внешние зависимости модулей (ADR-0008), живут в `src/services/`. Строятся только те, что задекларированы включёнными модулями.
@@ -105,6 +145,38 @@
 - `minRequestInterval` — минимальный интервал между запросами (троттлинг, чтобы не ловить лимиты API).
 
 Методы `ShikimoriApi`: `search(query, limit)`, `top(limit)`, `animeById(id)`.
+
+### `combat`
+
+Боевая система: расчёт характеристик, урона, очерёдности, эффектов. Используется модулем `combat`.
+
+Опции: нет.
+
+API `CombatApi`: `calculateStats`, `calculateDamage`, `calculateTurnOrder`, `applyEffect`, `startBattle`, `nextTurn`, `executeAction`, `isBattleOver`.
+
+### `gacha`
+
+Гача-движок: баннеры, крутки, валюта, коллекция, задания, shop. Используется модулем `gacha`.
+
+Опции: `startingAstrite?` (стартовый баланс для тестов).
+
+API `GachaApi`: `seedCatalog`, `getWallet`, `getActiveBanners`, `getBanner`, `getCharacter`, `listCharacters`, `pull`, `getPity`, `getCollection`, `getHistory`, `claimDaily`, `claimWeekly`, `listQuestProgress`, `claimQuest`, `shopPurchase`, `leaderboardUnique`, `adminGrantCurrency`, `createBanner`.
+
+### `minigames`
+
+Мини-игры: сокровища, викторина, взлом, рыбалка, добыча, кости. Используется модулем `minigames`.
+
+Опции: нет.
+
+API `MinigamesApi`: `claimDailyLogin`, `getLoginStreak`, `canPlayToday`, `playTreasureHunt`, `playQuiz`, `playCodeBreaker`, `playFishing`, `playResourceGather`, `playDice`, `getGameStats`.
+
+### `weapons`
+
+Оружие: инвентарь, экипировка, улучшение. Используется модулем `weapons`.
+
+Опции: нет.
+
+API `WeaponsApi`: `listAvailable`, `get`, `getPlayerWeapon`, `equipWeapon`, `unequipWeapon`, `upgradeWeapon`, `getPlayerWeapons`, `getCharacterWeapons`, `getWeapon`, `discardWeapon`.
 
 ## Как добавить в этот каталог
 
